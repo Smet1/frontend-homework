@@ -4,13 +4,15 @@ const max = numbers => Math.max(...numbers);
 
 // const rle = function (string) {
 const rle = string => {
-    if (typeof(string) !== "string") return undefined;
+    if (typeof(string) !== "string") {
+        return;
+    }
 
-    var tmp = string[0];
-    var counter = 1;
-    var result = "";
+    let tmp = string[0];
+    let counter = 1;
+    let result = "";
 
-    for (var i = 1; i <= string.length; i++) {
+    for (let i = 1; i <= string.length; i++) {
         if (string[i] === tmp) {
             counter++;
         } else {
