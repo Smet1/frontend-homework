@@ -9,22 +9,23 @@ const rle = string => {
     }
 
     let tmp = string[0];
-    let counter = 1;
+    let counter = 0;
     let result = "";
 
-    for (let i = 1; i <= string.length; i++) {
-        if (string[i] === tmp) {
+    // работает, но ИМХО не оч
+    // string += " ";  
+
+    string.split('').forEach(element => {
+        if (tmp === element) {
             counter++;
         } else {
-            if (counter != 1) {
-                result += (tmp + counter);
-            } else {
-                result += tmp;
-            }
-            tmp = string[i];
+            (counter === 1) ? result += tmp : result += (tmp + counter);
+            tmp = element;
             counter = 1;
         }
-    }
+    });
+
+    (counter === 1) ? result += tmp : result += (tmp + counter);
 
     return result;
 }
