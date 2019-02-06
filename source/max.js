@@ -16,13 +16,14 @@ const rle = string => {
     // string += " ";  
 
     string.split('').forEach(element => {
-        if (tmp === element) {
-            counter++;
-        } else {
-            (counter === 1) ? result += tmp : result += (tmp + counter);
-            tmp = element;
-            counter = 1;
-        }
+        // с if else мб лучше будет
+        tmp === element ? (
+            counter++
+        ) : (
+            (counter === 1) ? result += tmp : result += (tmp + counter),
+            tmp = element,
+            counter = 1
+        );
     });
 
     (counter === 1) ? result += tmp : result += (tmp + counter);
