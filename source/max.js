@@ -2,10 +2,12 @@
 
 const max = numbers => Math.max(...numbers);
 
-const rle = function (string) {
+// const rle = function (string) {
+const rle = string => {
     var tmp = string[0]
     var counter = 1
     var result = ''
+    
     for (var i = 1; i <= string.length; i++) {
         if (string[i] == tmp) {
             counter++
