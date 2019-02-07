@@ -9,6 +9,7 @@ QUnit.module('Тестируем функцию rle', function () {
 		assert.strictEqual(rle('YYYYYYYYYTRR'), 'Y9TR2');
 		assert.strictEqual(rle('WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW'), 'W12BW12B3W24BW14')
 		assert.strictEqual(rle('Xtmprsqzntwlfb'), 'Xtmprsqzntwlfb');
-		assert.strictEqual(rle('AAAAAAbbbXXXXXt'), 'A6b3X5t')
+		assert.strictEqual(rle('AAAAAAbbbXXXXXt'), 'A6b3X5t');
+		assert.strictEqual(rle('112233'), '122232');
 	});
 });
