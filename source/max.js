@@ -15,15 +15,14 @@ const rle = string => {
     // работает, но ИМХО не оч
     // string += " ";  
 
-    string.split('').forEach(element => {
-        // с if else мб лучше будет
-        tmp === element ? (
-            counter++
-        ) : (
-            (counter === 1) ? result += tmp : result += (tmp + counter),
-            tmp = element,
-            counter = 1
-        );
+    [...string].forEach(element => {
+        if (tmp === element) {
+            counter++;
+        } else {
+            (counter === 1) ? result += tmp : result += (tmp + counter);
+            tmp = element;
+            counter = 1;
+        }
     });
 
     (counter === 1) ? result += tmp : result += (tmp + counter);
